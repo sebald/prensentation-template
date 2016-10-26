@@ -49,11 +49,8 @@ module.exports = {
       test: /\.json$/,
       loader: 'json'
     }, {
-      test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)(\?.*)?$/,
-      loader: 'file',
-      query: {
-        name: 'assets/[name].[hash:8].[ext]'
-      }
+      test: /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2)$/,
+      loader: 'file'
     }]
   }
 };

@@ -1,0 +1,24 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Firefox */
+_:-moz-tree-row(hover), .spectacle-deck {
+  perspective: 1000px;
+}
+
+_:-moz-tree-row(hover), ul .appear {
+  display: inline;
+}
+
+.spectacle-slide {
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+}
