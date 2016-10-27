@@ -1,42 +1,20 @@
 import './font.css';
 import hexRgb from 'hex-rgb';
+import { ansiGroups, uiGroups } from 'nova-colors';
+
 
 export const COLOR_THEME = {
-  'purple rain': {
-    text: '#3F1263',
-    heading: '#986EAD',
-    highlight: '#D8CBBB',
-    background: '#F2F2F2'
-  },
-  'autumn': {
-    text: '#392F2F',
-    heading: '#3A7563',
-    highlight: '#59A985',
-    background: '#E6D3A7'
-  },
-  'bam': {
-    text: '#58828B',
-    heading: '#5E9387',
-    highlight: '#C8E29D',
-    background: '#F2F299'
-  },
-  'cold': {
-    text: '#00334E',
-    heading: '#145374',
-    highlight: '#5588A3',
-    background: '#E8E8E8'
-  },
   'nova': {
-    text: '#e6eef3',
-    heading: '#7fc1ca',
-    highlight: '#dada93',
-    background: '#3c4c55'
+    text: ansiGroups.bright.white, /** want more contrast :-x */
+    heading: ansiGroups.normal.cyan,
+    highlight: ansiGroups.normal.yellow,
+    background: ansiGroups.normal.black
   },
   'default': {
-    text: '#1e272c',
-    heading: '#4d8fb5',
-    highlight: '#4aa6b3',
-    background: '#d5e0e6'
+    text: ansiGroups.normal.black,
+    heading: ansiGroups.normal.blue,
+    highlight: ansiGroups.normal.cyan,
+    background: uiGroups.gray6 //'#d5e0e6'
   }
 }
 
@@ -52,7 +30,8 @@ const screen = (color_theme) => {
   const color = getColorTheme(color_theme);
   const fonts = {
     body: `'Open Sans', sans-serif`,
-    header: 'Montserrat, sans-serif'
+    header: `Montserrat, sans-serif`,
+    code: `'Fira Mono', monospace`
   };
 
   // Base Style for all Headers
@@ -75,7 +54,7 @@ const screen = (color_theme) => {
         background: color.background,
         color: color.text,
         fontFamily: fonts.body,
-        fontSize: '150%',
+        fontSize: '100%',
         overflow: 'hidden'
       },
       'html, body': {
@@ -132,22 +111,25 @@ const screen = (color_theme) => {
         }
       },
       text: {
-        fontSize: '2.25rem',
-        margin: '0.25rem auto'
+        fontSize: '1.75rem',
+        margin: '0 auto 0.5rem'
+      },
+      s: {
+        strikethrough: {},
       },
       link: {
         display: 'inline-block',
         color: color.text,
         textDecoration: 'none',
-        paddingBottom: '3px',
+        marginBottom: '-2px',
         borderBottom: `2px solid rgba(${hexRgb(color.heading)}, 0.3)`,
         ':hover': {
           color: color.heading
         }
       },
       listItem: {
-        fontSize: '2.66rem',
-        padding: '0.175rem 0'
+        fontSize: '2rem',
+        padding: '0.25em 0'
       },
       list: {
         textAlign: 'left',
@@ -156,6 +138,16 @@ const screen = (color_theme) => {
       image: {
         display: 'block',
         margin: '0.5rem auto'
+      },
+      code: {
+        display: 'inline-block',
+        color: uiGroups.gray5,
+        fontFamily: fonts.code,
+        fontSize: '90%',
+        lineHeight: 1,
+        background: uiGroups.gray2,
+        padding: '6px 5px 3px',
+        borderRadius: '2px'
       },
       codePane: {
         pre: {},

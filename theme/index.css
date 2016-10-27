@@ -9,6 +9,14 @@ html, body, #root {
   padding: 0;
 }
 
+
+::selection {
+  background: #d18ec2; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background: #d18ec2; /* Gecko Browsers */
+}
+
 /* Firefox */
 _:-moz-tree-row(hover), .spectacle-deck {
   perspective: 1000px;
@@ -21,4 +29,11 @@ _:-moz-tree-row(hover), ul .appear {
 .spectacle-slide {
   -webkit-transform-origin: center center;
           transform-origin: center center;
+}
+
+@media screen {
+  p {
+    /** Because setting it in the `screen.js` is not working :-( */
+    line-height: 1.5 !important;
+  }
 }

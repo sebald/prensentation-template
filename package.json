@@ -21,6 +21,8 @@
   "homepage": "https://github.com/sebald/prensentation-template#readme",
   "dependencies": {
     "normalize.css": "5.0.0",
+    "nova-colors": "2.1.5",
+    "prismjs": "git://github.com/sebald/prism.git#857de841ff6fdcab505c14d10d3059bd0066acf5",
     "react": "15.3.2",
     "react-dom": "15.3.2",
     "spectacle": "1.2.5"

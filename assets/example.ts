@@ -1,3 +1,5 @@
+import foo from 'foo';
+
 class Greeter {
     greeting: string;
     constructor(message: string) {
@@ -8,6 +10,8 @@ class Greeter {
     }
 }
 
+let num = 55;
+let exp = /(.*)/;
 let greeter = new Greeter("world");
 
 let button = document.createElement('button');
@@ -16,4 +20,7 @@ button.onclick = function() {
     alert(greeter.greet());
 }
 
+if (true) { num = 123; }
+
+// some comment
 document.body.appendChild(button);

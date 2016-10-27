@@ -16,13 +16,16 @@ import {
   Appear,
   Fit,
   Fill,
-  Layout
+  Layout,
+  Markdown,
+  Code
 } from 'spectacle';
 
 import preloader from 'spectacle/lib/utils/preloader';
 import createTheme from '../theme';
 
 const theme = createTheme();
+const gutter = '25px';
 const img = {
   pug: require('../assets/745px-Carl_Reichert_Mops.jpg'),
   nyan: require('../assets/nyancat.gif')
@@ -36,15 +39,20 @@ export default class Presentation extends React.Component {
         <Deck progress="none" transition={['fade']} transitionDuration={200}>
           <Slide>
             <Heading size={1} fit>Hello!</Heading>
-            <Link href="https://github.com/sebald/prensentation-template">
-              View on Github
-            </Link>
+            <Text>
+              <Link href="https://github.com/sebald/prensentation-template">
+                View on Github
+              </Link>
+            </Text>
           </Slide>
           <Slide>
             <Heading size={1}>H1</Heading>
             <Heading size={2}>H2</Heading>
             <Heading size={3}>H3</Heading>
             <Heading size={4}>H4</Heading>
+          </Slide>
+          <Slide>
+            <Markdown>{`HTTP as API. Grunt is a language. The only difference is that the *revealing module pattern* was engineered as a way to ensure that all methods and variables are kept private until they are acceptable before being submitted to the D3. [Broccoli](https://en.wikipedia.org/wiki/Broccoli) is a lightweight data-interchange format. Isomorphic is an application is said to be universal isomorphic when its code can run both in the ECMAScript language specification. It allows you to write powerful and flexible code with its elegant, well documented, and coherent APIs.`}</Markdown>
           </Slide>
           <Slide>
             <BlockQuote>
@@ -69,14 +77,14 @@ export default class Presentation extends React.Component {
             <Heading>Columns</Heading>
             <Layout>
               <Fill>
-                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                  Left
-                </Heading>
+                <Text margin={`0 ${gutter} 0 0`} textAlign="left">
+                  JSON for Linked Data. Ionic is a realtime MVC Framework for Node. JavaScript language that compiles into JavaScript. Express is a JavaScript library for JavaScript programmers. MVC Framework for Node.
+                </Text>
               </Fill>
               <Fill>
-                <Heading size={4} caps textColor="secondary" bgColor="white" margin={10}>
-                  Right
-                </Heading>
+                <Text margin={`0 0 0 ${gutter}`} textAlign="left">
+                  Applications such as PDF documents, site-specific browsers, and desktop widgets. JavaScript developer. MongoDB, ExpressJS, AngularJS, and Node. JavaScript code linter. Patterns is a JavaScript API for rendering interactive 3D and 2D graphics within any compatible web browser without the use of JavaScript for server-side Web applications.
+                </Text>
               </Fill>
             </Layout>
           </Slide>
@@ -97,9 +105,13 @@ export default class Presentation extends React.Component {
           </Slide>
           <Slide>
             <CodePane
-              lang="ts"
+              lang="typescript"
               source={require('raw!../assets/example.ts')}
             ></CodePane>
+          </Slide>
+          <Slide>
+            <Text>Some text that das inline <Code>code</Code>!</Text>
+            <Text>This is another piece of inline code <Code>global</Code>!</Text>
           </Slide>
         </Deck>
       </Spectacle>
