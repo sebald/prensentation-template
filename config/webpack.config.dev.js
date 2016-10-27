@@ -29,7 +29,8 @@ module.exports = {
       loader: 'babel',
       query: {
         presets: ['react', 'es2015'],
-        babelrc: false
+        babelrc: false,
+        compact: false
       }
     }, {
       test: /\.css$/,
