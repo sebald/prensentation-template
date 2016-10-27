@@ -27,8 +27,8 @@ import createTheme from '../theme';
 const theme = createTheme();
 const gutter = '25px';
 const img = {
-  pug: require('../assets/745px-Carl_Reichert_Mops.jpg'),
-  nyan: require('../assets/nyancat.gif')
+  pug: require('./assets/745px-Carl_Reichert_Mops.jpg'),
+  nyan: require('./assets/nyancat.gif')
 };
 preloader(img);
 
@@ -106,7 +106,7 @@ export default class Presentation extends React.Component {
           <Slide>
             <CodePane
               lang="typescript"
-              source={require('raw!../assets/example.ts')}
+              source={require('raw!./assets/example.ts')}
             ></CodePane>
           </Slide>
           <Slide>
@@ -118,3 +118,8 @@ export default class Presentation extends React.Component {
     );
   }
 }
+
+// import React from 'react';
+import { render } from 'react-dom';
+
+render(<Presentation/>, document.getElementById('root'));
