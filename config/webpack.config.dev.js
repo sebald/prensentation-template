@@ -1,4 +1,3 @@
-const path = require('path');
 const webpack = require('webpack');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -9,7 +8,7 @@ const pkg = require(paths.package);
 module.exports = {
   devtool: 'eval',
   entry: [
-    paths.entry.js
+    paths.entry
   ],
   output: {
     path: paths.build,
@@ -31,7 +30,8 @@ module.exports = {
         presets: ['react', 'es2015'],
         babelrc: false,
         compact: false
-      }
+      },
+      include: [paths.src, paths.entry]
     }, {
       test: /\.css$/,
       loader: 'style!css'
@@ -48,7 +48,7 @@ module.exports = {
     new CaseSensitivePathsPlugin(),
     new HtmlWebpackPlugin({
       title: `Slides | ${pkg.name.split('-').join(' ')}`,
-      template: paths.entry.html,
+      template: paths.theme.html,
       favicon: paths.theme.favicon
     })
   ]

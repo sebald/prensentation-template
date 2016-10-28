@@ -11,11 +11,10 @@ function resolvePath(realtive_path) {
 module.exports = {
   package: resolvePath('package.json'),
   build: resolvePath('build'),
-  entry: {
-    html: resolvePath('example/index.html'),
-    js: resolvePath('example/index.js')
-  },
+  entry: resolvePath('example/index.js'),
+  src: resolvePath('src'),
   theme: {
-    favicon: resolvePath('src/theme/imgs/favicon.png')
+    html: resolvePath('src/theme/index.html'),
+    favicon: resolvePath('src/theme/favicon.png')
   }
 };
