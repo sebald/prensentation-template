@@ -1,6 +1,6 @@
 import './font.css';
 import hexRgb from 'hex-rgb';
-import { ansiGroups, uiGroups } from 'nova-colors';
+import novaColors, { ansiGroups, uiGroups } from 'nova-colors';
 
 
 export const COLOR_THEME = {
@@ -44,7 +44,7 @@ const screen = (color_theme) => {
   }, style);
 
   return {
-    colors: color,
+    colors: Object.assing({}, color, novaColors),
     fonts,
 
     // Global CSS
