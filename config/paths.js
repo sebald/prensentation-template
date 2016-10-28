@@ -1,17 +1,12 @@
-const path = require('path');
-const fs = require('fs');
+'use strict';
 
-// Find the correct path.
-const project_directory = fs.realpathSync(process.cwd());
-function resolvePath(realtive_path) {
-  return path.resolve(project_directory, realtive_path);
-}
-
+const resolvePath = require('../scripts/utils').resolvePath;
 
 module.exports = {
+  default_entry: 'src/index.js',
+
   package: resolvePath('package.json'),
   build: resolvePath('build'),
-  entry: resolvePath('example/index.js'),
   src: resolvePath('src'),
   theme: {
     html: resolvePath('src/theme/index.html'),
