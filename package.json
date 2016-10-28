@@ -20,14 +20,6 @@
   },
   "homepage": "https://github.com/sebald/prensentation-template#readme",
   "dependencies": {
-    "normalize.css": "5.0.0",
-    "nova-colors": "2.1.5",
-    "prismjs": "git://github.com/sebald/prism.git#857de841ff6fdcab505c14d10d3059bd0066acf5",
-    "react": "15.3.2",
-    "react-dom": "15.3.2",
-    "spectacle": "1.2.5"
-  },
-  "devDependencies": {
     "babel-core": "6.18.0",
     "babel-loader": "6.2.5",
     "babel-preset-es2015": "6.18.0",
@@ -44,10 +36,16 @@
     "html-webpack-plugin": "2.24.0",
     "json-loader": "0.5.4",
     "markdown-loader": "0.1.7",
+    "normalize.css": "5.0.0",
+    "nova-colors": "2.1.5",
     "open": "0.0.5",
     "pretty-bytes": "4.0.2",
     "pretty-ms": "2.1.0",
+    "prismjs": "git://github.com/sebald/prism.git#857de841ff6fdcab505c14d10d3059bd0066acf5",
     "raw-loader": "0.5.1",
+    "react": "15.3.2",
+    "react-dom": "15.3.2",
+    "spectacle": "1.2.5",
     "style-loader": "0.13.1",
     "webpack": "1.13.2",
     "webpack-dev-server": "1.16.2"
