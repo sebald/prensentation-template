@@ -54,7 +54,7 @@ function runServer (port) {
       open(`http://${host}:${port}`);
     }
     const bundle_size = chunks.map(c => c.size).reduce((sum, size) => sum + size, 0);
-    console.log(chalk.green('\u267b Compiled successfully! ') + chalk.dim(`(${prettyMs(time)}, ${prettyBytes(bundle_size)})`));
+    console.log(chalk.green('\u267b  Compiled successfully! ') + chalk.dim(`(${prettyMs(time)}, ${prettyBytes(bundle_size)})`));
   });
 
   const server = new WebpackDevServer(compiler, {

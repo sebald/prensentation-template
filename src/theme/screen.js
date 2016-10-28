@@ -1,6 +1,6 @@
 import './font.css';
 import hexRgb from 'hex-rgb';
-import novaColors, { ansiGroups, uiGroups } from 'nova-colors';
+import novaColors, { ansiGroups } from 'nova-colors';
 
 
 export const COLOR_THEME = {
@@ -10,11 +10,11 @@ export const COLOR_THEME = {
     highlight: ansiGroups.normal.yellow,
     background: ansiGroups.normal.black
   },
-  'default': {
+  'avon': {
     text: ansiGroups.normal.black,
     heading: ansiGroups.normal.blue,
     highlight: ansiGroups.normal.cyan,
-    background: uiGroups.gray6 //'#d5e0e6'
+    background: novaColors.grays.gray6 //'#d5e0e6'
   }
 }
 
@@ -22,7 +22,7 @@ export const COLOR_THEME = {
 export const getColorTheme = (name) => {
   let theme = COLOR_THEME[name];
   if (theme) { return theme; }
-  return COLOR_THEME['default'];
+  return COLOR_THEME['nova'];
 }
 
 
@@ -44,7 +44,7 @@ const screen = (color_theme) => {
   }, style);
 
   return {
-    colors: Object.assign({}, color, novaColors),
+    colors: Object.assign({}, color, novaColors.colors, novaColors.grays),
     fonts,
 
     // Global CSS
@@ -135,17 +135,32 @@ const screen = (color_theme) => {
         textAlign: 'left',
         padding: '0 0 0 3rem'
       },
+      tableHeaderItem: {
+        fontSize: '2.25rem',
+        fontWeight: 'bold',
+        border: `2px solid ${novaColors.grays.gray2}`,
+        padding: '0.5rem 0'
+      },
+      tableItem: {
+        fontSize: '1.5rem',
+        border: `2px solid ${novaColors.grays.gray2}`,
+        padding: '1rem 0.5rem'
+      },
+      table: {
+        width: '100%',
+        borderCollapse: 'collapse'
+      },
       image: {
         display: 'block',
         margin: '0.5rem auto'
       },
       code: {
         display: 'inline-block',
-        color: uiGroups.gray5,
+        color: novaColors.grays.gray5,
         fontFamily: fonts.code,
         fontSize: '90%',
         lineHeight: 1,
-        background: uiGroups.gray2,
+        background: novaColors.grays.gray2,
         padding: '6px 5px 3px',
         borderRadius: '2px'
       },

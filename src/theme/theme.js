@@ -8,6 +8,9 @@ import print from 'spectacle/lib/themes/default/print';
 
 /**
  * Load a language syntax extension to use with PrismJS.
+ *
+ * Note: We use custom language components with PrismJS
+ * in order to have additional coloring for `globals`, ...
  */
 require('prismjs/components/prism-clike');
 require('./syntax/prism-javascript.nova');

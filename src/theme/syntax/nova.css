@@ -1,7 +1,6 @@
 /**
- * Based on Nova (http://www.trevordmiller.com/nova/).
+ * Based on Nova Theme by Tevor Miller (http://www.trevordmiller.com/nova/).
  */
-
 code[class*="language-"],
 pre[class*="language-"] {
   color: #c5d4dd;
@@ -13,7 +12,7 @@ pre[class*="language-"] {
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
-  line-height: 1.5;
+  line-height: 1.4;
 
   -moz-tab-size: 4;
   -o-tab-size: 4;

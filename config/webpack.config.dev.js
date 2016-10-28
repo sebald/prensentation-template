@@ -4,6 +4,7 @@ const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const paths = require('./paths');
+const pkg = require(paths.package);
 
 module.exports = {
   devtool: 'eval',
@@ -46,8 +47,9 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new CaseSensitivePathsPlugin(),
     new HtmlWebpackPlugin({
-      inject: true,
-      template: paths.entry.html
+      title: `Slides | ${pkg.name.split('-').join(' ')}`,
+      template: paths.entry.html,
+      favicon: paths.theme.favicon
     })
   ]
 };
