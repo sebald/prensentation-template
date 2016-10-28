@@ -27,7 +27,7 @@ module.exports = {
       test: /\.(js|jsx)$/,
       loader: 'babel',
       query: {
-        presets: ['react', 'es2015'],
+        presets: ['react', 'es2015', 'stage-0'],
         babelrc: false,
         compact: false
       },
