@@ -8,7 +8,6 @@ const paths = require('./paths');
 module.exports = {
   devtool: 'eval',
   entry: [
-    require.resolve('babel-polyfill'),
     paths.entry.js
   ],
   output: {
