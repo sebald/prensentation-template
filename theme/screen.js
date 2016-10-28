@@ -44,7 +44,7 @@ const screen = (color_theme) => {
   }, style);
 
   return {
-    colors: Object.assing({}, color, novaColors),
+    colors: Object.assign({}, color, novaColors),
     fonts,
 
     // Global CSS

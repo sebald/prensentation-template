@@ -1,6 +1,8 @@
 const chalk = require('chalk');
 const detect = require('detect-port');
 const open = require('open');
+const prettyMs = require('pretty-ms');
+const prettyBytes = require('pretty-bytes');
 const WebpackDevServer = require('webpack-dev-server');
 const webpack = require('webpack');
 
@@ -30,17 +32,19 @@ function runServer (port) {
     console.log('\u{1f4c0}  Compiling...');
   });
   compiler.plugin('done', stats => {
-    const result = stats.toJson({}, true);
+    const { errors, warnings, time, chunks } = stats.toJson({}, true);
 
-    if (result.errors.length) {
+    // Only show errors, if there are some.
+    if (errors.length) {
       console.log(chalk.red('\u2620  Compiliation error!'));
-      result.errors.forEach(msg => console.log(msg));
+      errors.forEach(msg => console.log(msg));
       return;
     }
 
-    if (result.warnings.length) {
+    // Only show warnings, if there are some.
+    if (warnings.length) {
       console.log(chalk.yellow('\u26a0  Compiled with warnings!'));
-      result.warnings.forEach(msg => console.log(msg));
+      warnings.forEach(msg => console.log(msg));
       return;
     }
 
@@ -49,8 +53,8 @@ function runServer (port) {
       first_compile = true;
       open(`http://${host}:${port}`);
     }
-
-    console.log(chalk.green('\u267b Compiled successfully!'));
+    const bundle_size = chunks.map(c => c.size).reduce((sum, size) => sum + size, 0);
+    console.log(chalk.green('\u267b Compiled successfully! ') + chalk.dim(`(${prettyMs(time)}, ${prettyBytes(bundle_size)})`));
   });
 
   const server = new WebpackDevServer(compiler, {
