@@ -59,6 +59,7 @@ module.exports = function runServer (entry, host, port) {
   const server = new WebpackDevServer(compiler, {
     clientLogLevel: 'none',
     quiet: true,
+    compress: true,
     hot: true,
     // contentBase: paths.entry.html,
     publicPath: config.output.publicPath,
