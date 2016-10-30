@@ -5,7 +5,7 @@
   "readme": "README.md",
   "main": "server.js",
   "scripts": {
-    "start": "node script/start example/index.js"
+    "start": "node scripts/start example/index.js"
   },
   "repository": {
     "type": "git",
