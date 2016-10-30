@@ -1,6 +1,6 @@
 'use strict';
 
-const resolvePath = require('../scripts/utils').resolvePath;
+const resolvePath = require('../utils/path.utils').resolvePath;
 
 module.exports = {
   default_entry: 'src/index.js',

@@ -4,8 +4,8 @@ const chalk = require('chalk');
 const detect = require('detect-port');
 const fs = require('fs');
 const meow = require('meow');
-const resolvePath = require('./utils').resolvePath;
-const runServer = require('./server');
+const resolvePath = require('../utils/path.utils').resolvePath;
+const runServer = require('../config/server');
 const default_entry = require('../config/paths').default_entry;
 
 

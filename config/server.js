@@ -7,8 +7,8 @@ const prettyBytes = require('pretty-bytes');
 const WebpackDevServer = require('webpack-dev-server');
 const webpack = require('webpack');
 
-const createConfig = require('../config/webpack.config');
-const paths = require('../config/paths');
+const paths = require('./paths');
+const createConfig = require('./webpack.config');
 
 
 module.exports = function runServer (entry, host, port) {
