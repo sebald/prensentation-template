@@ -5,7 +5,8 @@
   "readme": "README.md",
   "main": "server.js",
   "scripts": {
-    "start": "node scripts/start example/index.js"
+    "start": "node scripts/start example/index.js",
+    "test": "eslint config scripts src utils"
   },
   "repository": {
     "type": "git",
@@ -52,5 +53,9 @@
     "style-loader": "0.13.1",
     "webpack": "1.13.2",
     "webpack-dev-server": "1.16.2"
+  },
+  "devDependencies": {
+    "eslint": "3.9.0",
+    "eslint-plugin-react": "^6.4.1"
   }
 }

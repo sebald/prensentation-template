@@ -7,7 +7,6 @@ const prettyBytes = require('pretty-bytes');
 const WebpackDevServer = require('webpack-dev-server');
 const webpack = require('webpack');
 
-const paths = require('./paths');
 const createConfig = require('./webpack.config');
 
 
@@ -61,7 +60,6 @@ module.exports = function runServer (entry, host, port) {
     quiet: true,
     compress: true,
     hot: true,
-    // contentBase: paths.entry.html,
     publicPath: config.output.publicPath,
     watchOptions: {
       ignored: /node_modules/
@@ -72,8 +70,8 @@ module.exports = function runServer (entry, host, port) {
   // Start server!
   server.listen(port, err => {
     if (err) {
-      return conosle.log(chalk.red(err));
+      return console.log(chalk.red(err));
     }
     console.log(`\u{1f984}  Starting server @ http://${host}:${port} ...`);
   });
-}
+};

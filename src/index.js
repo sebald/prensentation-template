@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { render } from 'react-dom';
 import {
   Appear,
@@ -59,7 +59,7 @@ export {
 
 // Base presentation component
 export const Presentation = ({ children, theme = 'nova', images = {} }) => {
-  preloader(images)
+  preloader(images);
   return (
     <Spectacle theme={createTheme(theme)}>
       <Deck progress="none" transition={['fade']} transitionDuration={200}>
@@ -67,6 +67,18 @@ export const Presentation = ({ children, theme = 'nova', images = {} }) => {
       </Deck>
     </Spectacle>
   );
+};
+
+Presentation.propTypes = {
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node,
+  ]),
+  theme: PropTypes.isString,
+  images: PropTypes.shape({
+    color: PropTypes.string,
+    size: PropTypes.string,
+  })
 };
 
 
