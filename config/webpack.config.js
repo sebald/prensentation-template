@@ -1,6 +1,5 @@
 'use strict';
 
-const webpack = require('webpack');
 const CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -53,4 +52,4 @@ module.exports = function createConfig (entry) {
       })
     ]
   };
-}
+};

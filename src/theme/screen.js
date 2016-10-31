@@ -16,14 +16,14 @@ export const COLOR_THEME = {
     highlight: ansiGroups.normal.cyan,
     background: novaColors.grays.gray6 //'#d5e0e6'
   }
-}
+};
 
 
 export const getColorTheme = (name) => {
   let theme = COLOR_THEME[name];
   if (theme) { return theme; }
   return COLOR_THEME['nova'];
-}
+};
 
 
 const screen = (color_theme) => {
